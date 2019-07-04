@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:alpine
 
 COPY bitrix.conf /etc/nginx/conf.d/
 
