@@ -1,5 +1,5 @@
 FROM nginx:alpine
 
-COPY bitrix.conf /etc/nginx/conf.d/
+COPY bitrix.conf.template /etc/nginx/conf.d/
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD /bin/bash -c "envsubst < /etc/nginx/conf.d/bitrix.conf.template > /etc/nginx/conf.d/bitrix.conf && nginx -g 'daemon off;'

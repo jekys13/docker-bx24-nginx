@@ -10,7 +10,7 @@ map $http_upgrade  $replace_upgrade {
 
 server {
     listen *:80;
-    server_name _;
+    server_name ${DOMAIN};
 
     charset off;
     gzip on;
